@@ -1,13 +1,14 @@
-.mission-vission_cards{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+.mission-vission_cards {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1440px; 
 }
-.mission-vission_card{
-    display: flex;
+
+.mission-vission_card {
+  display: flex;
   width: 700px;
-  height: 684px;
   padding: 30px;
   flex-direction: column;
   align-items: flex-start;
@@ -16,10 +17,33 @@
   border-radius: 24px;
   background: #E5E5E5;
   color: #000;
-  font-family: Montserrat;
+  font-family: 'Montserrat';
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: -0.36px;
-  }
+}
+
+.mission-vission_card strong {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.mission-vission_card div {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.mission-vission_card ul {
+  list-style: disc;
+  margin: 16px 0;
+  padding-left: 20px;
+}
+
+.mission-vission_card li {
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 8px;
+}

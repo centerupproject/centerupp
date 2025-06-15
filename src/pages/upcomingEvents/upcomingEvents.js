@@ -10,9 +10,10 @@ import { WhiteButton } from '../../layouts/whitebutton/WhiteButton.js';
 const UpComingEvents = () => {
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(true);
+  const language = localStorage.getItem('language')||'en'
 
   useEffect(() => {
-    fetch("https://centerupui-default-rtdb.firebaseio.com/UpComing.json")
+    fetch("https://centerupui-default-rtdb.firebaseio.com/upcoming/-OSpdUNkbF12EephOzp6.json")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -41,13 +42,16 @@ const UpComingEvents = () => {
 
       <div className="upcoming-events__cards">
         {cards.map((card, index) => {
+          const title = language === 'am' && card.titleAm ? card.titleAm : card.title;
+           const description = language === 'am' && card.descriptionAm ? card.descriptionAm : card.description;
+           const text = language === 'am' && card.textAm ? card.textAm : card.text;
           switch (card.CardType) {
             case "CardSplitLeftImage":
               return (
                 <CardSplitLeftImage
                   key={index}
-                  title={card.title}
-                  description={card.description}
+                  title={title}
+                  description={description}
                   image={card.image}
                 />
               );
@@ -55,8 +59,8 @@ const UpComingEvents = () => {
               return (
                 <CardSplitRightImage
                   key={index}
-                  title={card.title}
-                  description={card.description}
+                  title={title}
+                  description={description}
                   image={card.image}
                 />
               );
@@ -64,23 +68,23 @@ const UpComingEvents = () => {
               return (
                 <HeadLine
                   key={index}
-                  title={card.title}
-                  description={card.description}
+                  title={title}
+                  description={description}
                 />
               );
             case "TextCard":
               return (
                 <TextCard
                   key={index}
-                  title={card.title}
-                  description={card.description}
+                  title={title}
+                  description={description}
                 />
               );
             case "WhiteButton":
               return (
                 <WhiteButton
                   key={index}
-                  text={card.text}
+                  text={text}
                   redirect={card.redirect}
                 />
               );

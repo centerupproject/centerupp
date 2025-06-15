@@ -27,6 +27,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import './App.css';
 import OurTeam from './pages/ourTeam/ourTeam.js';
 import ContactUs from './pages/contactUs/contactUs.js';
+import Map from './components/Map/Map.js';
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -44,7 +45,7 @@ const AppRoutes = () => {
           <Route path="/universities" element={<Universities />} />
           <Route path="/universities/form" element={<UniversitiesForm />} />
           <Route path="/courses-activities" element={<Workshops />} />
-          <Route path="/conferances" element={<Conferances />} />
+          <Route path="/conferences" element={<Conferances />} />
           <Route path="/futureUp" element={<FutureUp />} />
           <Route path="/upcoming" element={<UpComing />} />
           <Route path="/eventorg" element={<EventOrg />} />
@@ -52,6 +53,7 @@ const AppRoutes = () => {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/our-team" element={<OurTeam />} />
           <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/map" element={<Map />} />
         </Routes>
       </main>
       {location.pathname !== "/contact-us" && <Footer />}

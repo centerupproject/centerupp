@@ -197,3 +197,6 @@ column-gap: 10px;
     gap: 59px;
   }
   
+  .contact-us__info--numbers img{
+    width: 37px;
+  }

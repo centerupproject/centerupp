@@ -28,7 +28,7 @@ const Header = () => {
     '/junior',
     '/universities',
     '/courses-activities',
-    '/conferances',
+    '/conferences',
     '/futureUp',
     '/international-camps',
     '/eventorg',
@@ -120,7 +120,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/conferances" onClick={closeServices}>
+                  <Link to="/conferences" onClick={closeServices}>
                     {t('conferences')}
                   </Link>
                 </li>

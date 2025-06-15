@@ -38,7 +38,7 @@ const Conferences = () => {
   return (
     <div className="conferances">
       <div className="conferances__background">
-        <h1 className="conferances__title">Conferances</h1>
+        <h1 className="conferances__title">{language === 'am'? 'Կոնֆերանսներ' :'Conferences'}</h1>
       </div>
 
       <div className="conferances__cards">

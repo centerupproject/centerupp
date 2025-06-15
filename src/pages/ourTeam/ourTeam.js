@@ -41,13 +41,14 @@ const OurTeam = () => {
   if (loading) return <div>Loading membership program...</div>;
 
   return (
-    <div className="about-us">
-      <div className="about-us__background">
-        <h1 className="about-us__title"> {language === 'am' ? 'Մեր մասին' : 'Our Team'}</h1>
+    <div className="our-team">
+      <div className="our-team__background">
+        <h1 className="our-team__title"> {language === 'am' ? 'Մեր Թիմը' : 'Our Team'}</h1>
       </div>
 
-      <div className="about-us__cards">
+      <div className="our-team__cards">
         {cards.map((card, index) => {
+         
           switch (card.CardType) {
             case "CardSplitLeftImage":
               return (

@@ -10,6 +10,8 @@ import { WhiteButton } from '../../layouts/whitebutton/WhiteButton.js';
 const InternationalCamps = () => {
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(true);
+    const [language, setLanguage] = useState(localStorage.getItem('language') || 'en');
+  
 
   useEffect(() => {
     fetch("https://centerupui-default-rtdb.firebaseio.com/EventOrganization.json")
@@ -36,18 +38,21 @@ const InternationalCamps = () => {
   return (
     <div className="event-organization">
       <div className="event-organization__background">
-        <h1 className="event-organization__title">Event Organization</h1>
+        <h1 className="event-organization__title">{language==='am'?'Միջոցառումների կազմակերպում':'Event Organization'}</h1>
       </div>
 
       <div className="event-organization__cards">
         {cards.map((card, index) => {
+            const title = language === 'am' && card.titleAm ? card.titleAm : card.title;
+            const description = language === 'am' && card.descriptionAm ? card.descriptionAm : card.description;
+            const text = language === 'am' && card.textAm ? card.textAm : card.text;
           switch (card.CardType) {
             case "CardSplitLeftImage":
               return (
                 <CardSplitLeftImage
                   key={index}
-                  title={card.title}
-                  description={card.description}
+                  title={title}
+                  description={description}
                   image={card.image}
                 />
               );
@@ -55,8 +60,8 @@ const InternationalCamps = () => {
               return (
                 <CardSplitRightImage
                   key={index}
-                  title={card.title}
-                  description={card.description}
+                  title={title}
+                  description={description}
                   image={card.image}
                 />
               );
@@ -64,23 +69,23 @@ const InternationalCamps = () => {
               return (
                 <HeadLine
                   key={index}
-                  title={card.title}
-                  description={card.description}
+                  title={title}
+                  description={description}
                 />
               );
             case "TextCard":
               return (
                 <TextCard
                   key={index}
-                  title={card.title}
-                  description={card.description}
+                  title={title}
+                  description={description}
                 />
               );
             case "WhiteButton":
               return (
                 <WhiteButton
                   key={index}
-                  text={card.text}
+                  text={text}
                   redirect={card.redirect}
                 />
               );
