@@ -38,13 +38,14 @@ const Workshops = () => {
   return (
     <div className="workshops">
      <div className="workshops__background">
-  <video
-    className="workshops__video"
-    autoPlay
-    muted
-    loop
-    playsInline
-  >
+<video
+  className="workshops__video"
+  autoPlay
+  muted
+  loop
+  playsInline
+  preload="auto"
+>
     <source src="/bgvideo.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
