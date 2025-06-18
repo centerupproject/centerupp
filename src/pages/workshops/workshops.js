@@ -45,7 +45,7 @@ const Workshops = () => {
     loop
     playsInline
   >
-    <source src="/Workshop.MOV" type="video/mp4" />
+    <source src="/bgvideo.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 
