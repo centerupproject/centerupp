@@ -4,7 +4,7 @@ import './progresbar.css';
 const ProgresBar = ({ data }) => {
   const [animatedValues, setAnimatedValues] = useState(data.map(() => 0));
   const progressBarRef = useRef(null);
-
+  const language = localStorage.getItem('language') || 'en'
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -47,7 +47,7 @@ const ProgresBar = ({ data }) => {
       <div className="progres-bar__cards">
         {data.map((item, index) => (
           <div key={index} className="progres-cards__card">
-            <span className="progres-bar__title">{item.key}</span>
+            <span className="progres-bar__title">{language=='en'?item.key:item.keyAm}</span>
             <hr />
             <span className="progres-values__value">{animatedValues[index]}+</span>
           </div>

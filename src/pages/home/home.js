@@ -46,7 +46,7 @@ const Home = () => {
   return (
     <div className="home-page">
       <div className="home-page__background">
-        <h1>{language === 'am' ? 'Welcome to our big family' : 'Welcome to our big family'}</h1>
+        <h1>{language === 'am' ? 'Բարի գալուստ մեր մեծ ընտանիք' : 'Welcome to our big family'}</h1>
       </div>
       <div className="home-page__banner">
         <div className="marquee">

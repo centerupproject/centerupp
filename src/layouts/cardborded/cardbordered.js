@@ -13,7 +13,7 @@ export const CardBordered = ({ title, description, image, redirect }) => {
       <div className='bordered_card_info'>
         <h1 className='bordered_card_info--title'>{title}</h1>
         <p className='bordered_card_info--description'>{description}</p>
-        <WhiteButton text={language==='am'?'Ավելին':'Learn More'} redirect={redirect}/>
+        <WhiteButton text={language==='am'?'Իմանալ ավելին':'Learn More'} redirect={redirect}/>
       </div>
     </div>
   );

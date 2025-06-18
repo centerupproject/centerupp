@@ -37,7 +37,7 @@ const UpComingEvents = () => {
   return (
     <div className="upcoming-events">
       <div className="upcoming-events__background">
-        <h1 className="upcoming-events__title">Upcoming Events</h1>
+        <h1 className="upcoming-events__title">{language=='en'?'Upcoming Events':'Գալիք Միջոցառումներ'}</h1>
       </div>
 
       <div className="upcoming-events__cards">

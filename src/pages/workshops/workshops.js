@@ -37,11 +37,23 @@ const Workshops = () => {
 
   return (
     <div className="workshops">
-      <div className="workshops__background">
-        <h1 className="workshops__title">
-          {language === 'am' ? 'Դասընթացներ և ժամանց' : 'Courses & Activities'}
-        </h1>
-      </div>
+     <div className="workshops__background">
+  <video
+    className="workshops__video"
+    autoPlay
+    muted
+    loop
+    playsInline
+  >
+    <source src="/Workshop.MOV" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <h1 className="workshops__title">
+    {language === 'am' ? 'Դասընթացներ և ժամանց' : 'Courses & Activities'}
+  </h1>
+</div>
+
 
       <div className="workshops__cards">
         {cards.map((card, index) => {
