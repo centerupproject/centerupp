@@ -46,9 +46,8 @@ const Workshops = () => {
   playsInline
   preload="auto"
 >
-    <source src="/bgvideo.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
+  <source src="/bgvideo.mp4" type="video/mp4" />
+</video>
 
   <h1 className="workshops__title">
     {language === 'am' ? 'Դասընթացներ և ժամանց' : 'Courses & Activities'}
