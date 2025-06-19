@@ -1,0 +1,14 @@
+
+path{
+    fill: rgb(230, 209, 25);
+    stroke-opacity: 1;
+    stroke-width: 1.5px;
+    stroke: white;
+}
+path:hover{
+    fill: gray;
+}
+.Map{
+    width: 1500px;
+    height: 850px;
+}

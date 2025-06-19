@@ -51,11 +51,12 @@
   font-weight: 300;
   width: 52%;
   text-align: center;
+  position: relative;
+  z-index: 1;
   font-family: 'Montserrat', sans-serif;
 }
 
 .workshops {
-/*   background-color: #050927; */
   margin-bottom: 90px;
 }
 

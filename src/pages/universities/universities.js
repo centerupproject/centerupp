@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './universities.css';
+import  Map from '../../components/Map/Map.js';
 
 import { CardSplitRightImage } from '../../layouts/cardsplitright/cardsplitright.js';
 import { CardSplitLeftImage } from '../../layouts/cardsplitleft/cardsplitleft.js';
@@ -103,10 +104,8 @@ const Universities = () => {
               );
             case "image":
               return (
-                <img
+                <Map
                   key={index}
-                  src={card.image}
-                  alt="img"
                 />
               );
             default:
@@ -117,5 +116,6 @@ const Universities = () => {
     </div>
   );
 };
+
 
 export default Universities;

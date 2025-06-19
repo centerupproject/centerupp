@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import './UserForm.css';
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
+import { Input } from "@heroui/react";
 
 const DATABASE_URL = "https://formquestions-108ff-default-rtdb.firebaseio.com/";
 
@@ -59,19 +60,7 @@ const UserForm = () => {
     }
   }, []);
 
-  useEffect(() => {
-    const userUid = "LuJf9aMujvQmaBJeNwKurwJYvBH2";
-    fetch(`${DATABASE_URL}userResponses.json`)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data) {
-          const filteredResponses = Object.entries(data).filter(([id, responseData]) => {
-            return responseData.userUid === userUid;
-          });
-          setUserResponses(filteredResponses);
-        }
-      });
-  }, []);
+  
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -207,23 +196,28 @@ const UserForm = () => {
 
   return (
     <div className="user-form">
-      <h1>Authorized Email {user.email}</h1>
+      <div className="account__info">
+        <h1>{user.email}</h1>
       <button className="logout-button" onClick={handleLogout}>Logout</button>
+      </div>
+      
       <h2>{currentSection.id}</h2>
       {questions.map((q) => (
         <div key={q.id} className={`question-item ${answers[q.id] !== undefined ? 'fade-in' : ''}`}>
           <label className="question-label">{q.label}</label>
           {q.type === "text" && (
-            <input
+            <textarea
               className="question-input"
+              placeholder={q.label}
               type="text"
               value={answers[q.id] || ""}
               onChange={(e) => handleChange(q.id, e.target.value)}
             />
           )}
           {q.type === "date" && (
-            <input
+            <Input
               className="question-input"
+              placeholder={q.label}
               type="date"
               value={answers[q.id] || ""}
               onChange={(e) => handleChange(q.id, e.target.value)}
@@ -236,6 +230,8 @@ const UserForm = () => {
                   <input
                     className="checkbox-input"
                     type="checkbox"
+              placeholder={q.label}
+
                     value={option}
                     checked={answers[q.id] === option}
                     onChange={(e) => {

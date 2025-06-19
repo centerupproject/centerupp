@@ -38,7 +38,7 @@ const Workshops = () => {
   return (
     <div className="workshops">
      <div className="workshops__background">
-<video
+  <video
   className="workshops__video"
   autoPlay
   muted
